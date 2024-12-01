@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import Feature_Card from "./Feature_Card";
 
 export default function Features() {
