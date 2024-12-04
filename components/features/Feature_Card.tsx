@@ -1,8 +1,8 @@
 import Image from "next/image"
 
-type propsType = Record<"icon" | "title", "desc", string> 
+type propsType = Record<"icon" | "title" | "desc", string>
 
-export default function Feature_Card({icon, title, desc}: propsType): JSX.Element {
+export default function Feature_Card({ icon, title, desc }: propsType): JSX.Element {
   return (
     <div className="flex flex-col items-center">
       <Image

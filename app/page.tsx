@@ -4,7 +4,7 @@ import Header from "@/components/header/Header"
 import Hero from "@/components/hero/Hero"
 import Features from "@/components/features/Features"
 import Services from "@/components/services/Services"
-
+import Reviews from "@/components/reviews/Reviews"
 
 export default function LandingPage() {
   return (
@@ -20,6 +20,7 @@ export default function LandingPage() {
       <Hero />
       <Features />
       <Services />
+      <Reviews />
     </div>
   );
 }

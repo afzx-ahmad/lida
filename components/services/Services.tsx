@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function Services() {
+export default function Services(): JSX.Element {
   return (
     <section className="py-28">
       <p className="uppercase font-extrabold text-primary text-lg mb-5">
