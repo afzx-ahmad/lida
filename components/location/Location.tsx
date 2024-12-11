@@ -67,7 +67,7 @@ export default function Location(): JSX.Element {
       </h1>
 
       <div
-        className="h-[500px] w-full"
+        className="h-[500px] w-full shadow-[0_40px_40px_0_rgba(0,0,0,0.25)]"
         id="map"
       >
       </div>

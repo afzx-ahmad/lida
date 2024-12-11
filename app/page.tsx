@@ -6,10 +6,11 @@ import Features from "@/components/features/Features"
 import Services from "@/components/services/Services"
 import Reviews from "@/components/reviews/Reviews"
 import Location from "@/components/location/Location"
+import Footer from "@/components/footer/Footer"
 
 export default function LandingPage() {
   return (
-    <div className="px-[120px] py-[60px] font-primary">
+    <div className="px-[120px] pt-[60px] font-primary">
       <Image
         className="absolute top-0 right-0 -z-10"
         src="/images/bg-blue.png"
@@ -23,6 +24,7 @@ export default function LandingPage() {
       <Services />
       <Reviews />
       <Location />
+      <Footer />
     </div>
   );
 }
