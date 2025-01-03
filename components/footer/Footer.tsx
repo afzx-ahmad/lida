@@ -78,14 +78,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-
-      <div
-        className="bg-primary text-white h-32 flex justify-center items-center"
-      >
-        <p>
-          © 2024 Lidia. All rights reserved.
-        </p>
-      </div>
     </section>
   )
 }

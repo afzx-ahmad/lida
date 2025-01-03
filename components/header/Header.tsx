@@ -1,10 +1,49 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import useMediaQuery from "@/hooks/useMediaQuery"
+import HamburgerMenu from "./HamburgerMenu"
+import { useState, useEffect } from "react"
+import { useAnimate, stagger } from "motion/react"
+import animationVariants from "@/utils/animationVariants"
 
 export default function Header(): JSX.Element {
+  const isShowMobileMenu = useMediaQuery("(max-width: 1023px)")
+  const [isOpen, setIsOpen] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [scope, animate] = useAnimate()
+
+  function toggleMenu() {
+    if (isAnimating) return;
+
+    setIsOpen(!isOpen)
+  }
+
+  async function handleMenuAnimation() {
+    setIsAnimating(true);
+    isOpen ?
+      await animate([
+        [scope.current, { x: "-100vw" }, { ease: "linear", duration: 0.3 }],
+        ["li", { opacity: 1 }, { ease: "easeIn", duration: 0.2, delay: stagger(0.2, { startDelay: 1 }) }]
+      ]) :
+      await animate([
+        ["li", { ...animationVariants.aniamte_liMenuOut.animationProps }, { ...animationVariants.aniamte_liMenuOut.transition }],
+        [scope.current, { x: 0 }, { ease: "linear", duration: 0.3 }]
+      ])
+
+    setIsAnimating(false)
+  }
+
+  useEffect(() => {
+    if (isShowMobileMenu) {
+      handleMenuAnimation()
+    }
+  }, [isOpen, isShowMobileMenu]);
+
   return (
     <header
-      className="flex w-full items-center"
+      className="flex w-full h-max items-center"
     >
       <Image
         className="h-[28px] w-[79px] mr-[125px]"
@@ -14,34 +53,56 @@ export default function Header(): JSX.Element {
         width={79}
       />
 
-      <nav>
+      <nav
+        ref={scope}
+        className={`${isShowMobileMenu ? "right-[-100vw] absolute h-screen w-screen bg-primary top-0 px-[40px] transition-all duration-500 ease-in" : "block h-max"}`}
+      >
         <ul
-          className="capitalize flex items-center gap-x-10 text-sm h-full"
+          className="capitalize flex flex-col lg:flex-row gap-y-10 lg:gap-y-0 lg:gap-x-10 h-dvh lg:h-max justify-center lg:justify-start items-end lg:items-center text-3xl lg:text-sm font-bold text-zinc-300 lg:text-zinc-500"
         >
-          <li className="text-activeLink">
-            home
+          <li className="text-white opacity-0 lg:opacity-100 lg:text-activeLink underline underline-offset-8">
+            <a href="#">
+              home
+            </a>
           </li>
           <li>
-            feature
+            <a href="#">
+              feature
+            </a>
           </li>
           <li>
-            services
+            <a href="#">
+              services
+            </a>
           </li>
           <li>
-            review
+            <a href="#">
+              review
+            </a>
           </li>
           <li>
-            location
+            <a href="#">
+              location
+            </a>
           </li>
         </ul>
       </nav>
 
-      <Link
-        className="ml-auto capitalize font-bold bg-white px-[45px] py-[10px] rounded-lg"
-        href="/login"
-      >
-        login
-      </Link>
+      {
+        isShowMobileMenu ?
+          <HamburgerMenu
+            className="ml-auto z-10"
+            isOpen={isOpen}
+            toggleMenu={toggleMenu}
+          />
+          :
+          <Link
+            className="lg:block ml-auto capitalize font-bold bg-white px-[45px] py-[10px] rounded-lg"
+            href="/login"
+          >
+            login
+          </Link>
+      }
     </header>
   )
 }

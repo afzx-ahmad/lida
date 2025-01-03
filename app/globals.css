@@ -2,8 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hamburger Menu */
+.line {
+  fill: white;
+  transform-origin: 15px 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Open State Animation */
+.icon.open .top {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.icon.open .middle {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.icon.open .bottom {
+  transform: translateX(-14px) translateY(-4px) rotate(-45deg);
 }
