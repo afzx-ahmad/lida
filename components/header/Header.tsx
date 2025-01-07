@@ -5,7 +5,7 @@ import Link from "next/link"
 import useMediaQuery from "@/hooks/useMediaQuery"
 import HamburgerMenu from "./HamburgerMenu"
 import { useState, useEffect } from "react"
-import { useAnimate, stagger } from "motion/react"
+import { motion, useAnimate, stagger } from "motion/react"
 import animationVariants from "@/utils/animationVariants"
 
 export default function Header(): JSX.Element {
@@ -24,11 +24,11 @@ export default function Header(): JSX.Element {
     setIsAnimating(true);
     isOpen ?
       await animate([
-        [scope.current, { x: "-100vw" }, { ease: "linear", duration: 0.3 }],
+        [scope.current, { x: "-120vw" }, { ease: "linear", duration: 0.3 }],
         ["li", { opacity: 1 }, { ease: "easeIn", duration: 0.2, delay: stagger(0.2, { startDelay: 1 }) }]
       ]) :
       await animate([
-        ["li", { ...animationVariants.aniamte_liMenuOut.animationProps }, { ...animationVariants.aniamte_liMenuOut.transition }],
+        ["li", { opacity: 0 }, { duration: 0.2, ease: "easeInOut", delay: stagger(0.2, { from: "last" }) }],
         [scope.current, { x: 0 }, { ease: "linear", duration: 0.3 }]
       ])
 
@@ -42,7 +42,10 @@ export default function Header(): JSX.Element {
   }, [isOpen, isShowMobileMenu]);
 
   return (
-    <header
+    <motion.header
+      variants={animationVariants}
+      initial="initSlideDown_Header"
+      animate="slideDown_Header"
       className="flex w-full h-max items-center"
     >
       <Image
@@ -55,7 +58,7 @@ export default function Header(): JSX.Element {
 
       <nav
         ref={scope}
-        className={`${isShowMobileMenu ? "right-[-100vw] absolute h-screen w-screen bg-primary top-0 px-[40px] transition-all duration-500 ease-in" : "block h-max"}`}
+        className={`${isShowMobileMenu ? "right-[-120vw] absolute h-screen w-screen bg-primary top-0 px-[40px] transition-all duration-500 ease-in" : "block h-max"}`}
       >
         <ul
           className="capitalize flex flex-col lg:flex-row gap-y-10 lg:gap-y-0 lg:gap-x-10 h-dvh lg:h-max justify-center lg:justify-start items-end lg:items-center text-3xl lg:text-sm font-bold text-zinc-300 lg:text-zinc-500"
@@ -103,6 +106,6 @@ export default function Header(): JSX.Element {
             login
           </Link>
       }
-    </header>
+    </motion.header>
   )
 }

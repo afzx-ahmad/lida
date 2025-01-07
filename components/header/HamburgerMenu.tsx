@@ -15,10 +15,10 @@ export default function HamburgerMenu({ className, isOpen, toggleMenu }: propsTy
       aria-label="Toggle Menu"
     >
       <svg className={`icon ${isOpen && "open"}`} width="30" height="24" viewBox="0 0 30 24" xmlns="http://www.w3.org/2000/svg">
-        <rect className="line top" x="0" y="0" width="30" height="4" rx="2"></rect>
-        <rect className="line middle" x="0" y="10" width="30" height="4" rx="2"></rect>
-        <rect className="line bottom" x="0" y="20" width="30" height="4" rx="2"></rect>
+        <rect className={`line top ${isOpen ? "fill-white" : "fill-blue-500"}`} x="0" y="0" width="30" height="4" rx="2"></rect>
+        <rect className={`line middle ${isOpen ? "fill-white" : "fill-blue-500"}`} x="0" y="10" width="30" height="4" rx="2"></rect>
+        <rect className={`line bottom ${isOpen ? "fill-white" : "fill-blue-500"}`} x="0" y="20" width="30" height="4" rx="2"></rect>
       </svg>
-    </div>
+    </div >
   )
 }

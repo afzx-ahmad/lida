@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 
 import Header from "@/components/header/Header"
@@ -7,20 +9,27 @@ import Services from "@/components/services/Services"
 import Reviews from "@/components/reviews/Reviews"
 import Location from "@/components/location/Location"
 import Footer from "@/components/footer/Footer"
+import { motion } from "motion/react"
+import animationVariants from "@/utils/animationVariants"
+
+const MotionImage = motion(Image)
 
 export default function LandingPage() {
   return (
     <>
       <div className="px-[40px] pt-[20px] 2xl:px-[120px] 2xl:pt-[60px] font-primary relative overflow-x-hidden h-dvh">
-        <Image
-          className="absolute top-0 right-[-150px] xl:right-0 -z-10"
+        <MotionImage
+          variants={animationVariants}
+          initial="initSlideLeft"
+          animate="slideLeft_Hero"
+          className="hidden lg:block absolute top-0 right-[-150px] xl:right-0 -z-10"
           src="/images/bg-blue.png"
           alt="bg"
           width={720}
           height={813}
         />
         <Header />
-        {/* <Hero /> */}
+        <Hero />
         {/* <Features /> */}
         {/* <Services /> */}
         {/* <Reviews /> */}

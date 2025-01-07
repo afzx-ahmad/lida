@@ -12,7 +12,6 @@
 
 /* Hamburger Menu */
 .line {
-  fill: white;
   transform-origin: 15px 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
