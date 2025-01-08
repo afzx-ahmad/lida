@@ -6,7 +6,7 @@ import useMediaQuery from "@/hooks/useMediaQuery"
 import HamburgerMenu from "./HamburgerMenu"
 import { useState, useEffect } from "react"
 import { motion, useAnimate, stagger } from "motion/react"
-import animationVariants from "@/utils/animationVariants"
+import { animationVariants } from "@/utils/animationVariants"
 
 export default function Header(): JSX.Element {
   const isShowMobileMenu = useMediaQuery("(max-width: 1023px)")
@@ -46,6 +46,7 @@ export default function Header(): JSX.Element {
       variants={animationVariants}
       initial="initSlideDown_Header"
       animate="slideDown_Header"
+      viewport={{ once: true }}
       className="flex w-full h-max items-center"
     >
       <Image

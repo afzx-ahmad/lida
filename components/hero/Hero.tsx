@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "motion/react"
-import animationVariants from "@/utils/animationVariants"
+import { animationVariants } from "@/utils/animationVariants"
 
 const MotionLink = motion(Link)
 const MotionImage = motion(Image)
@@ -15,6 +15,7 @@ export default function Hero(): JSX.Element {
         variants={animationVariants}
         initial={"initIn"}
         whileInView={"fadeIn_Hero"}
+        viewport={{ once: true }}
         className="py-12 w-full lg:w-1/2">
         <motion.h1 variants={animationVariants} className="text-blackBlue font-extrabold text-5xl lg:text-7xl leading-[60px] lg:leading-[89px] mb-7">
           Search & review your <span className="text-primary">fav book</span> effortlessly
@@ -32,6 +33,7 @@ export default function Hero(): JSX.Element {
         variants={animationVariants}
         initial={"initSlideUp_Hero_books"}
         whileInView={"slideUp_Hero_books"}
+        viewport={{ once: true }}
         className="hidden lg:block mt-14 h-[450px] w-[500px]"
         src="/images/books.png"
         alt="books"

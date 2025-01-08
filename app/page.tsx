@@ -10,7 +10,7 @@ import Reviews from "@/components/reviews/Reviews"
 import Location from "@/components/location/Location"
 import Footer from "@/components/footer/Footer"
 import { motion } from "motion/react"
-import animationVariants from "@/utils/animationVariants"
+import { animationVariants } from "@/utils/animationVariants"
 
 const MotionImage = motion(Image)
 
@@ -20,7 +20,7 @@ export default function LandingPage() {
       <div className="px-[40px] pt-[20px] 2xl:px-[120px] 2xl:pt-[60px] font-primary relative overflow-x-hidden h-dvh">
         <MotionImage
           variants={animationVariants}
-          initial="initSlideLeft"
+          initial="initSlideLeft_Hero"
           animate="slideLeft_Hero"
           className="hidden lg:block absolute top-0 right-[-150px] xl:right-0 -z-10"
           src="/images/bg-blue.png"
@@ -30,8 +30,8 @@ export default function LandingPage() {
         />
         <Header />
         <Hero />
-        {/* <Features /> */}
-        {/* <Services /> */}
+        <Features />
+        <Services />
         {/* <Reviews /> */}
         {/* <Location /> */}
         {/* <Footer /> */}
