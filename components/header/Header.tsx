@@ -59,7 +59,7 @@ export default function Header(): JSX.Element {
 
       <nav
         ref={scope}
-        className={`${isShowMobileMenu ? "right-[-120vw] absolute h-screen w-screen bg-primary top-0 px-[40px] transition-all duration-500 ease-in" : "block h-max"}`}
+        className={`${isShowMobileMenu ? "right-[-120vw] fixed h-screen w-screen bg-primary top-0 px-[40px] transition-all duration-500 ease-in" : "block h-max"}`}
       >
         <ul
           className="capitalize flex flex-col lg:flex-row gap-y-10 lg:gap-y-0 lg:gap-x-10 h-dvh lg:h-max justify-center lg:justify-start items-end lg:items-center text-3xl lg:text-sm font-bold text-zinc-300 lg:text-zinc-500"
