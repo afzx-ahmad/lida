@@ -32,7 +32,7 @@ export default function LandingPage() {
         <Hero />
         <Features />
         <Services />
-        {/* <Reviews /> */}
+        <Reviews />
         {/* <Location /> */}
         {/* <Footer /> */}
       </div>

@@ -61,5 +61,17 @@ export const animationVariants: Variants = {
   },
   slideUp_Services: {
     opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeIn", staggerChildren: 0.3, delayChildren: 1.2 }
-  }
+  },
+  initSlideRight_Reviews: {
+    opacity: 0, x: "-100%"
+  },
+  slideRight_Reviews: {
+    opacity: 1, x: 0, transition: { default: { ease: "easeIn" }, opacity: { duration: 0.3 }, x: { duration: 0.6 } }
+  },
+  initFadeIn_Reviews: {
+    opacity: 0
+  },
+  fadeIn_Reviews: {
+    opacity: 1, transition: { duration: 0.6, ease: "easeIn", delay: 1 }
+  },
 }
