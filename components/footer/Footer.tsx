@@ -93,7 +93,7 @@ export default function Footer() {
         className="bg-primary text-white py-10 flex justify-center items-center"
       >
         <p>
-          © 2024 Lidia. All rights reserved.
+          © 2024 Lida. All rights reserved.
         </p>
       </div>
     </motion.section>
