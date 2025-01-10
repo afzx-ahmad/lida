@@ -17,7 +17,7 @@ const MotionImage = motion(Image)
 export default function LandingPage() {
   return (
     <>
-      <div className="px-[40px] pt-[20px] 2xl:px-[120px] 2xl:pt-[60px] font-primary relative overflow-x-hidden h-dvh">
+      <div className="px-[40px] pt-[20px] 2xl:px-[120px] 2xl:pt-[60px] font-primary relative overflow-x-hidden h-dvh max-w-[1440px] xl:mx-auto">
         <MotionImage
           variants={animationVariants}
           initial="initSlideLeft_Hero"
@@ -33,16 +33,9 @@ export default function LandingPage() {
         <Features />
         <Services />
         <Reviews />
-        {/* <Location /> */}
-        {/* <Footer /> */}
+        <Location />
+        <Footer />
       </div>
-      {/* <div */}
-      {/*   className="bg-primary text-white h-32 flex justify-center items-center" */}
-      {/* > */}
-      {/*   <p> */}
-      {/*     © 2024 Lidia. All rights reserved. */}
-      {/*   </p> */}
-      {/* </div> */}
     </>
   );
 }

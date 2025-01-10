@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect } from "react"
+import { motion } from "motion/react"
+import { animationVariants } from "@/utils/animationVariants"
 
 export default function Location(): JSX.Element {
   useEffect(() => {
@@ -19,11 +21,11 @@ export default function Location(): JSX.Element {
       const { Map } = (await google.maps.importLibrary("maps")) as google.maps.MapsLibrary;
       const { AdvancedMarkerElement } = (await google.maps.importLibrary("marker")) as google.maps.MarkerLibrary;
 
-      // The map, centered at Uluru
+      // The map, centered at location 
       const map = new Map(
         document.getElementById("map") as HTMLElement,
         {
-          zoom: 7,
+          zoom: 10,
           center: position,
           mapId: "DEMO_MAP_ID",
         }
@@ -33,7 +35,7 @@ export default function Location(): JSX.Element {
       new AdvancedMarkerElement({
         map: map,
         position: position,
-        title: "Uluru",
+        title: "Lida Location",
       });
     };
 
@@ -58,19 +60,33 @@ export default function Location(): JSX.Element {
 
   return (
     <section className="py-28">
-      <p className="uppercase font-extrabold text-primary text-lg mb-5">
+      <motion.p
+        variants={animationVariants}
+        viewport={{ once: true }}
+        initial="initSlideRight_Location"
+        whileInView="slideRight_Location"
+        className="uppercase font-extrabold text-primary text-base lg:text-lg mb-5">
         location
-      </p>
+      </motion.p>
 
-      <h1 className="text-5xl capitalize font-black mb-28">
+      <motion.h1
+        variants={animationVariants}
+        viewport={{ once: true }}
+        initial="initFadeIn_Location"
+        whileInView="fadeIn_Location"
+        className="text-3xl text-center md:text-left lg:text-5xl capitalize font-black mb-16">
         🗺 • Our Library Location
-      </h1>
+      </motion.h1>
 
-      <div
-        className="h-[500px] w-full shadow-[0_40px_40px_0_rgba(0,0,0,0.25)]"
+      <motion.div
+        variants={animationVariants}
+        viewport={{ once: true }}
+        initial="initFadeIn_Location"
+        whileInView="fadeIn_Location"
+        className="h-[300px] md:h-[500px] w-full shadow-[0_40px_40px_0_rgba(0,0,0,0.25)]"
         id="map"
       >
-      </div>
+      </motion.div>
     </section>
   )
 }

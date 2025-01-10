@@ -30,48 +30,66 @@ export const animationVariants: Variants = {
     opacity: 0, x: "-100%"
   },
   slideRight_Features: {
-    opacity: 1, x: 0, transition: { default: { ease: "easeIn" }, opacity: { duration: 0.3, delay: 1 }, x: { duration: 0.6, delay: 1 } }
+    opacity: 1, x: 0, transition: { ease: "easeIn", duration: 1.5 }
   },
   initFadeIn_Features: {
     opacity: 0
   },
   fadeIn_Features: {
-    opacity: 1, transition: { duration: 0.6, ease: "easeIn", delay: 1.6 }
+    opacity: 1, transition: { duration: 0.6, ease: "easeIn", delay: 1 }
   },
   initSlideUp_Features: {
     opacity: 0, y: "100%"
   },
   slideUp_Features: {
-    opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeIn", staggerChildren: 0.3 }
+    opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeIn", staggerChildren: 0.3, delayChildren: 1.2 }
   },
   initSlideRight_Services: {
     opacity: 0, x: "-100%"
   },
   slideRight_Services: {
-    opacity: 1, x: 0, transition: { default: { ease: "easeIn" }, opacity: { duration: 0.3, delay: 0.5 }, x: { duration: 0.6, delay: 1 } }
+    opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1.5 }
   },
   initFadeIn_Services: {
     opacity: 0
   },
   fadeIn_Services: {
-    opacity: 1, transition: { duration: 0.6, ease: "easeIn", delay: 1 }
+    opacity: 1, transition: { duration: 0.6, ease: "easeIn", delay: 1.5 }
   },
   initSlideUp_Services: {
     opacity: 0, y: 120
   },
   slideUp_Services: {
-    opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeIn", staggerChildren: 0.3, delayChildren: 1.2 }
+    opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeIn", staggerChildren: 0.3, delayChildren: 1 }
   },
   initSlideRight_Reviews: {
     opacity: 0, x: "-100%"
   },
   slideRight_Reviews: {
-    opacity: 1, x: 0, transition: { default: { ease: "easeIn" }, opacity: { duration: 0.3 }, x: { duration: 0.6 } }
+    opacity: 1, x: 0, transition: { ease: "easeIn", duration: 1.5 }
   },
   initFadeIn_Reviews: {
     opacity: 0
   },
   fadeIn_Reviews: {
     opacity: 1, transition: { duration: 0.6, ease: "easeIn", delay: 1 }
+  },
+  initSlideRight_Location: {
+    opacity: 0, x: "-100%"
+  },
+  slideRight_Location: {
+    opacity: 1, x: 0, transition: { ease: "easeIn", duration: 1.5 }
+  },
+  initFadeIn_Location: {
+    opacity: 0
+  },
+  fadeIn_Location: {
+    opacity: 1, transition: { duration: 0.6, ease: "easeIn", delay: 1 }
+  },
+  initFadeIn_Footer: {
+    opacity: 0
+  },
+  fadeIn_Footer: {
+    opacity: 1, transition: { duration: 0.6, eturease: "easeIn" }
   },
 }
