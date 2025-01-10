@@ -10,7 +10,7 @@ const MotionImage = motion(Image)
 
 export default function Hero(): JSX.Element {
   return (
-    <section className="flex flex-col lg:flex-row gap-x-1 w-full justify-between">
+    <section id="home" className="flex flex-col lg:flex-row gap-x-1 w-full justify-between">
       <motion.div
         variants={animationVariants}
         initial={"initIn"}

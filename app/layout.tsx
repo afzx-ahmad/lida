@@ -2,9 +2,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const primaryFont = localFont({
-    src: "./fonts/Plus Jakarta Sans/PlusJakartaSans.ttf",
-    variable: "--font-primary",
-    display: 'swap',
+  src: "./fonts/Plus Jakarta Sans/PlusJakartaSans.ttf",
+  variable: "--font-primary",
+  display: 'swap',
 })
 
 export const metadata = {
@@ -19,11 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-        <body
-            className={primaryFont.variable}
-        >
-            {children}
-        </body>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <body
+        className={primaryFont.variable}
+      >
+        {children}
+      </body>
     </html>
   )
 }

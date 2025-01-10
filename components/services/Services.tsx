@@ -6,7 +6,7 @@ const MotionImage = motion(Image)
 
 export default function Services(): JSX.Element {
   return (
-    <section className="py-16 lg:py-28">
+    <section id="services" className="py-16 lg:py-28">
       <motion.p
         variants={animationVariants}
         viewport={{ once: true }}

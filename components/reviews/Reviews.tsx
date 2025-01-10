@@ -4,7 +4,7 @@ import { animationVariants } from "@/utils/animationVariants"
 
 export default function Reviews(): JSX.Element {
   return (
-    <section className="py-20">
+    <section id="reviews" className="py-20">
       <motion.p
         variants={animationVariants}
         viewport={{ once: true }}

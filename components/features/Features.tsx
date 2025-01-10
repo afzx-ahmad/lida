@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 
 export default function Features(): JSX.Element {
   return (
-    <section className="py-28">
+    <section id="features" className="py-28">
       <motion.p
         variants={animationVariants}
         viewport={{ once: true }}

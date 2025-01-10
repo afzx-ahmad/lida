@@ -4,11 +4,20 @@ import { useEffect } from "react"
 import { motion } from "motion/react"
 import { animationVariants } from "@/utils/animationVariants"
 
+interface GoogleWindow extends Window {
+  google?: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    maps?: any;
+  };
+}
+
+declare let window: GoogleWindow;
+
 export default function Location(): JSX.Element {
   useEffect(() => {
     const initMap = async () => {
       // Wait until Google Maps is available
-      if (!(window as any).google || !(window as any).google.maps) {
+      if (!window.google || !window.google.maps) {
         console.error("Google Maps library not loaded");
         return;
       }
@@ -17,7 +26,6 @@ export default function Location(): JSX.Element {
       const position = { lat: -7.319829302944081, lng: 112.7587219582272 };
 
       // Request needed libraries
-      // @ts-ignore
       const { Map } = (await google.maps.importLibrary("maps")) as google.maps.MapsLibrary;
       const { AdvancedMarkerElement } = (await google.maps.importLibrary("marker")) as google.maps.MarkerLibrary;
 
@@ -59,7 +67,7 @@ export default function Location(): JSX.Element {
   }, [])
 
   return (
-    <section className="py-28">
+    <section id="location" className="py-28">
       <motion.p
         variants={animationVariants}
         viewport={{ once: true }}

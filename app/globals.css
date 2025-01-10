@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Hamburger Menu */
 .line {
   transform-origin: 15px 2px;
